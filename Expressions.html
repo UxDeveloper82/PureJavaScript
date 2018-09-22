@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Expressions</title>
+    <script>
+
+        //Literals
+        myName = "Peter"
+        myAge = 24
+         
+        document.write("a:" + 42 + "<br />")
+        document.write("b:" + "HI" + "<br />")
+        document.write("c:" + true + "<br/>")
+        document.write("d: " + myName + "<br/>")
+        document.write("E:" + myAge + "<br />")
+
+        //Expressions
+         document.write("a:" + (42 > 3 ) + "<br/>")
+         document.write("b:" + (91 > 4 ) + "<br/>")
+         document.write("C:" + (8 == 2 ) + "<br/>")
+         document.write("d:" + (4 < 17 ) + "<br/>")
+        
+        //Comparison
+        a = 7;
+        b = 11
+        if(a > b) document.write("a is greater than b <br />")
+        if(a < b ) document.write("a is less than b <br />")
+        if(a >= b) document.write(" a is greater or equal then b <br />")
+        if(a <= b) document.write("a is less or equal to b <br />")
+
+        //Logical
+        a=1;
+        b=0
+
+        document.write((a && b) + "<br />") // true Both operants needs to be true
+        document.write((a || b) + "<br />") // true if either operands 
+        document.write((!b) + "<br/>") // true if the operands is false if the operand  
+
+      //Using the with statement
+       string = "The quick brown jumps over the lazy dog"
+
+       with(string){
+           document.write("the String is :" + length + "character <br />")
+           document.write("In Upper Case its: " + toUpperCase());
+       }
+       
+       //How to return an error
+       onerror = errorHandler
+       //document.writ("Welcome to the Website") // Deliberate error
+
+
+       function errorHandler(message, url, line){
+           out = "Sorry, an error was encountered.\n\n";
+           out+= "Error" + message + "\n";
+           out+= "URL:" + url + "\n";
+           out+= "Line:" + line + "\n\n";
+           out+= "Click ok to Continue.\n\n";
+
+          //alert(out);
+          //return true;
+          
+       }
+
+        //Working with Array
+        displayItems("Dog","Cat","Pony","Hamster","Tortoise")
+        DisplayItems("Dog","Cat","Pony","Hamster","Tortoise")
+ 
+       function displayItems(v1,v2,v3,v4,v5){
+            document.write( "<br />"+ v1 + "<br/>")
+            document.write(v2 +  "<br />")
+            document.write(v3 +  "<br />")
+            document.write(v4 +  "<br />")
+            document.write(v5 +  "<br />")
+       }
+
+       //Modify the functions
+       function DisplayItems(){
+          for(var i =0; i< DisplayItems.arguments.length; i++){
+              document.write("Animal Name " + DisplayItems.arguments[i] + "<br />")
+          }
+        
+
+
+       }
+
+        //Join
+      
+       function together(){
+
+
+        const pets= ['Cat', 'Dog','Rabbit','Hamster'];
+   
+       
+
+        document.getElementById('item').innerHTML = pets.join('-');
+
+       }
+
+    </script>
+</head>
+<body onload="together()">
+      <div id="item"></div>
+    
+</body>
+</html>

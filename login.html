@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login Page</title>
+<script>    
+function validate(form){
+    fail = validateForname(form.forname.value)
+    fail += validateSurname(form.surname.value)
+    fail += validateUsername(form.username.value)
+     fail += validatePassword(form.password.value)
+    fail += validateAge(form.age.value)
+    fail += validateEmail(form.email.value)
+
+    
+    if(fail == ''){
+        return true
+    }
+    else {
+        alert(fail);
+        return false;
+    }
+}
+function validateForname(field){
+   if(field =='') alert( "No Forname was Entered.\n");
+   return ""
+}
+
+function validateSurname(field){
+   if(field =='') alert( "No Surname was Entered.\n");
+   return ""
+}
+function validateUsername(field){
+   if(field =='') alert( "No Username was Entered.\n");
+   else if(field.length < 5)
+       return "Username must be at least 5 characters.\n"
+   else if(/[^a-zA-Z0-9_-]/.test(field))
+       return "Only a-z,A-Z,0-9,-and _ allowed in Usernames.\n"    
+   return ""
+}
+function validatePassword(field){
+   if(field =='') alert( "No Username was Entered.\n");
+   else if(field.length < 5)
+       return "Username must be at least 5 characters.\n"
+   else if(/[^a-zA-Z0-9_-]/.test(field))
+       return "Only a-z,A-Z,0-9,-and _ allowed in Usernames.\n"    
+   return ""
+}
+function validateAge(field){
+    if(isNaN(field)) alert ("No Age was Entered.\n")
+    else if(field< 18 || field > 18)
+     return "Age must be between 18 and 110.\n"
+     return ""
+}
+
+function validateEmail(field){
+   if(field =='') return "No Email was Entered.\n"
+     else if(!((field.indexOf(".")>0) && (field.indexOf("@")>0)) || /[^a-zA-Z0-9.@_-]/.test(field))return "The Email address is invalid.\n"
+    return ""
+}
+
+</script>
+</head>
+<body>
+     <form method="" action="" onSubmit="validate(this)">
+         Forname:<input type="text" name="forname">
+         Surname: <input type="text" name="surname">
+         Username:<input type="text" name="username">
+         Age: <input type="text" name="age">
+         Password:<input type="text" name="password">
+         <input id="submit" type="submit" value="Sign Up">
+     </form>
+ 
+    <div class="output"></div>
+
+</body>
+</html>
